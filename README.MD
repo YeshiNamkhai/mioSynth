@@ -6,15 +6,15 @@ It took me a great deal of time to learn about analog synth programming, if you 
 
 ## Front panel
 At a first glance you see immediately the classic analog setting, check the schema for more details.
-![](/img/cabbage_mioSynth.PNG)
+<div style="align:left"><img src="/img/cabbage_mioSynth.PNG" width="700"></div>
 
 ### Run in your DAW
 Say you like Ableton Live, here a screenshot with mioSynth playing out of the box. You can export it as VST instrument or as standalone application.
-![](/img/ableton_mioSynth.PNG)
+<div style="align:left"><img src="/img/ableton_mioSynth.PNG" width="700"></div>
 
 ## Logic schema
 Here every sub-panel is connected according to this diagram.
-![](/img/schema_synth.PNG)
+<div style="align:left"><img src="/img/schema_synth.PNG" width="600"></div>
 
 ### Midi
 Connect your midi keyboard and control in realtime **mioSynth**, to customize check in the source code.
@@ -24,7 +24,7 @@ Selecting the **mode** you choose between monophonic or polyphonic. If you playb
 
 ### Show
 Let you copy the string to add in your score and play the selected patch, check the console log for a line starting with **f1 0 33 -2** or **i1 0 1**. Open **mioSynth_player** and paste the code in the score section, add notes as usual. Remember to use **p6** to specify the ftable (actually it's your patch) you just added.
-![](/img/cabbage_mioSynth_show.PNG)
+<div style="align:left"><img src="/img/cabbage_mioSynth_show.PNG" width="700"></div>
 
 You may have as many patch as you like, just give the proper ftable number. That would be:
 <blockquote>

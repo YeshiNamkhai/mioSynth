@@ -7,12 +7,33 @@
 <style>
 html {width:100%;background-color:lightgray;}
 body {width: 75%;margin: 0 auto; text-align:justified;background-color:white;padding-bottom:50px}
-h1,h2,h3,p {margin: 20px 50px;}
+h1,h2,h3,p, table {margin: 20px 50px;}
 img {padding: 5px; max-width:100%; }
+table {
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
 </style>
 <body>
 <br>
-<h3>mioSynth</h3>
+<h1>mioSynth</h1>
 <p>Welcome to <strong>mioSynth</strong> a simple way to build an orchestra for <a href="https://csound.com/">cSound</a> and play your favorite melody. Run it in <a href="https://cabbageaudio.com/">Cabbage</a>, standalone or VST within your own DAW.</p>
 <h2>Programming '70 synths</h2>
 <p>It took me a great deal of time to learn about analog synth programming, if you are like me and you know little on to make your own patches 
@@ -50,5 +71,252 @@ accompanying <a href="https://archive.org/stream/SynthesizerBasicsDeanFriedman60
 </blockquote>
 <h3>Patches</h3>
 <p>To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can rename or delete patches easily.&nbsp;</p>
+<h3>Internals</h3>
+<p>This synth operates setting 33 parameters from the GUI, here you find every parameter explained.
+ Generally speaking when you create a score in cSound at least you will use p1 (instrument), p2 (start time), p3 (duration), 
+ p4 (frequency or note), p5 (amplitude). </p>
+<table><thead>
+<tr>
+<th>variable name</th>
+<th>p-var</th>
+<th>function</th>
+<th>module</th>
+<th>range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iAat</td>
+<td>p6</td>
+<td>attack</td>
+<td>VCA</td>
+<td>0.001, 1</td>
+</tr>
+<tr>
+<td>iAde</td>
+<td>p7</td>
+<td>decay</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iAsu</td>
+<td>p8</td>
+<td>sustain</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iAre</td>
+<td>p9</td>
+<td>release</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kPw1</td>
+<td>p10</td>
+<td>duty cicle</td>
+<td>OSC1</td>
+<td>0.05, 0.95</td>
+</tr>
+<tr>
+<td>kPw2</td>
+<td>p11</td>
+<td>duty cicle</td>
+<td>OSC2</td>
+<td>0.05, 0.95</td>
+</tr>
+<tr>
+<td>kMx1</td>
+<td>p12</td>
+<td>volume</td>
+<td>OSC1</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kMx2</td>
+<td>p13</td>
+<td>volume</td>
+<td>OSC2</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kOc1</td>
+<td>p14</td>
+<td>octave</td>
+<td>OSC1</td>
+<td>-36, 36 semitones</td>
+</tr>
+<tr>
+<td>kOc2</td>
+<td>p15</td>
+<td>octave</td>
+<td>OSC2</td>
+<td>-36, 36 semitones</td>
+</tr>
+<tr>
+<td>kFn1</td>
+<td>p16</td>
+<td>fine tuning</td>
+<td>OSC1</td>
+<td>-25, 25 cents</td>
+</tr>
+<tr>
+<td>kFn2</td>
+<td>p17</td>
+<td>fine tuning</td>
+<td>OSC2</td>
+<td>-25, 25 cents</td>
+</tr>
+<tr>
+<td>kCut</td>
+<td>p18</td>
+<td>cut off</td>
+<td>VCF</td>
+<td>0, 22050</td>
+</tr>
+<tr>
+<td>kRes</td>
+<td>p19</td>
+<td>resonance</td>
+<td>VCF</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iFat</td>
+<td>p20</td>
+<td>attack</td>
+<td>VCF</td>
+<td>0.001, 1</td>
+</tr>
+<tr>
+<td>iFde</td>
+<td>p21</td>
+<td>decay</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iFsu</td>
+<td>p22</td>
+<td>sustain</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iFre</td>
+<td>p23</td>
+<td>release</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kVol</td>
+<td>p24</td>
+<td>main volume</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kPan</td>
+<td>p25</td>
+<td>panning</td>
+<td>VCA</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kNse</td>
+<td>p26</td>
+<td>selector</td>
+<td>NOISE</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td>kMx3</td>
+<td>p27</td>
+<td>volume</td>
+<td>NOISE</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kSiz</td>
+<td>p28</td>
+<td>room size</td>
+<td>REVERB</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kMx4</td>
+<td>p29</td>
+<td>dry/wet</td>
+<td>REVERB</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iRev</td>
+<td>p30</td>
+<td>switch</td>
+<td>REVERB</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iWf1</td>
+<td>p31</td>
+<td>selector</td>
+<td>OSC1</td>
+<td>1, 3</td>
+</tr>
+<tr>
+<td>iWf2</td>
+<td>p32</td>
+<td>selector</td>
+<td>OSC2</td>
+<td>1, 3</td>
+</tr>
+<tr>
+<td>iL1t</td>
+<td>p33</td>
+<td>switch</td>
+<td>OSC1</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iL2t</td>
+<td>p34</td>
+<td>switch</td>
+<td>OSC2</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iL1v</td>
+<td>p35</td>
+<td>switch</td>
+<td>OSC1</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>iL2v</td>
+<td>p36</td>
+<td>switch</td>
+<td>OSC2</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td>kTrm</td>
+<td>p37</td>
+<td>tremolo rate</td>
+<td>REVERB</td>
+<td>0.5, 20</td>
+</tr>
+<tr>
+<td>kVbr</td>
+<td>p38</td>
+<td>vibrato rate</td>
+<td>REVERB</td>
+<td>0.5, 20</td>
+</tr>
+</tbody>
+</table>
 </body>
 </html>

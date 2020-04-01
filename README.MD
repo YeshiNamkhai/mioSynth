@@ -40,3 +40,41 @@ You may have as many patch as you like, just give the proper ftable number. That
 
 ### Patches
 To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can rename or delete patches easily.
+
+### Internals
+This synth operates setting 33 parameters from the GUI, here you find every parameter explained.
+|variable name|p-var|function|module|range|
+|-------------|-----|--------|------|-----|
+|iAat|p6|attack|VCA|0.001, 1|
+|iAde|p7|decay|VCA|0, 1|
+|iAsu|p8|sustain|VCA|0, 1|
+|iAre|p9|release|VCA|0, 1|
+|kPw1|p10|duty cicle|OSC1|0, 0.5|
+|kPw2|p11|duty cicle|OSC2|0, 0.5|
+|kMx1|p12|Volume|OSC1|0, 1|
+|kMx2|p13|Volume|OSC2|0, 1|
+|kOc1|p14|octave|OSC1|-36, 36 semitones|
+|kOc2|p15|octave|OSC2|-36, 36 semitones|
+|kFn1|p16|fine tuning|OSC1|-25, 25 cents|
+|kFn2|p17|fine tuning|OSC2|-25, 25 cents|
+|kCut|p18|cut off|VCF|0, 22050|
+|kRes|p19|resonance|VCF|0, 1|
+|iFat|p20|attack|VCF|0.001, 1|
+|iFde|p21|decay|VCA|0, 1|
+|iFsu|p22|sustain|VCA|0, 1|
+|iFre|p23|release|VCA|0, 1|
+|kVol|p24|main volume|VCA|0, 1|
+|kPan|p25|panning|VCA|0, 1|
+|kNse|p26|selector|NOISE|1, 2|
+|kMx3|p27|volume|NOISE|0, 1|
+|kSiz|p28|room size|REVERB|0, 1|
+|kMx4|p29|dry/wet|REVERB|0, 1|
+|iRev|p30|switch|REVERB|0, 1|
+|iWf1|p31|selector|OSC1|1, 3|
+|iWf2|p32|selector|OSC2|1, 3|
+|iL1t|p33|switch|OSC1|0, 1|
+|iL2t|p34|switch|OSC2|0, 1|
+|iL1v|p35|switch|OSC1|0, 1|
+|iL2v|p36|switch|OSC2|0, 1|
+|kTrm|p37|tremolo rate|REVERB|0.5, 20|
+|kVbr|p38|vibrato rate|REVERB|0.5, 20|

@@ -42,7 +42,7 @@ You may have as many patch as you like, just give the proper ftable number. That
 To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can rename or delete patches easily.
 
 ### Internals
-This synth operates setting 33 parameters from the GUI, here you find every parameter explained.
+This synth operates setting 33 parameters from the GUI, here you find every parameter explained. Generally speaking when you create a score in cSound at least you will use p1 (instrument), p2 (start time), p3 (duration), p4 (frequency or note), p5 (amplitude).
 |variable name|p-var|function|module|range|
 |-------------|-----|--------|------|-----|
 |iAat|p6|attack|VCA|0.001, 1|

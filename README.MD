@@ -51,8 +51,8 @@ This synth operates setting 33 parameters from the GUI, here you find every para
 |iAre|p9|release|VCA|0, 1|
 |kPw1|p10|duty cicle|OSC1|0, 0.5|
 |kPw2|p11|duty cicle|OSC2|0, 0.5|
-|kMx1|p12|Volume|OSC1|0, 1|
-|kMx2|p13|Volume|OSC2|0, 1|
+|kMx1|p12|volume|OSC1|0, 1|
+|kMx2|p13|volume|OSC2|0, 1|
 |kOc1|p14|octave|OSC1|-36, 36 semitones|
 |kOc2|p15|octave|OSC2|-36, 36 semitones|
 |kFn1|p16|fine tuning|OSC1|-25, 25 cents|

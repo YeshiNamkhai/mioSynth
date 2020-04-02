@@ -17,7 +17,7 @@ Here every sub-panel is connected according to this diagram.
 <div style="align:left"><img src="/img/schema_synth.PNG" width="600"></div>
 
 ### Midi
-Connect your midi keyboard and control in realtime **mioSynth**, to customize check in the source code.
+Connect your midi keyboard and control in realtime **mioSynth**, use your DAW's midi learn feature. If you need more control or your DAW doesn't work as you expect, use the midi button on the panel and customize the **.csd** source code file; starting from line 103 near **iMid**.
 
 ### Mono
 Selecting the **mode** you choose between monophonic or polyphonic. If you playback with **mioSynth_player**, it will run always polyphonic.

@@ -1,3 +1,10 @@
+/*
+ ******* mioSynth *******
+ by Yeshi Silvano Namkhai
+ ************************
+ rep: https://github.com/YeshiNamkhai/mioSynth
+ web: https://my-hexagon.com
+*/
 <Cabbage>
 form caption("mioSynth") size(785, 300), colour("black"), pluginid("def1") ;style("legacy")
 keyboard bounds(0, 199, 790, 100) 
@@ -52,7 +59,7 @@ vslider bounds(424, 98, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relF
 
 ;VCA
 groupbox bounds(461, 8, 132, 186) text("VCA")
-vslider bounds(472, 38, 25, 87)  range(0.001, 1, 0.001, 1, 0.001) text("A") channel("attA") trackercolour(246, 118, 38, 255)
+vslider bounds(472, 38, 25, 87)  range(0.002, 1, 0.002, 1, 0.001) text("A") channel("attA") trackercolour(246, 118, 38, 255)
 vslider bounds(500, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("D") channel("decA") trackercolour(246, 118, 38, 255)
 vslider bounds(528, 38, 25, 87) range(0, 1, 0.7, 1, 0.001) text("S") channel("susA") trackercolour(246, 118, 38, 255)
 vslider bounds(556, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relA") trackercolour(246, 118, 38, 255)
@@ -68,6 +75,7 @@ button bounds(729, 136, 39, 15) text("Show", "Show") colour:1(255, 0, 0, 255) ch
 infobutton bounds(603, 136, 39, 15) text("Help") file("mioSynth.html") channel("help")
 button bounds(687, 136, 39, 15) text("Midi", "Midi") colour:1(255, 0, 0, 255) channel("midi")
 button bounds(645, 136, 39, 15) text("Mono", "Poly") colour:1(255, 0, 0, 255) channel("mono")
+
 
 </Cabbage>
 <CsoundSynthesizer>
@@ -176,8 +184,8 @@ instr 1
         ;use this for table
         Str1 sprintf "f01 0 33 -2 %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
         ;use this for notes
-        ;Str1 sprintf "i1 + . %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", p4, p5, iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
-        Str2 sprintf "%.3f %.3f %.3f %.3f %.3f %.3f %i %.3f %.3f %.3f %.3f %i %i %i %i %i %i %.3f %.3f", iFat, iFde, iFsu, iFre, kVol, kPan, kNse, kMx3, kSiz, kMx4, iRev, iWf1, iWf2, iL1t, iL2t, iL1v, iL2v, kTrm, kVbr
+        ;aStr1 sprintf "i1 + . %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", p4, p5, iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
+        Str2 sprintf " %.3f %.3f %.3f %.3f %.3f %.3f %i %.3f %.3f %.3f %i %i %i %i %i %i %i %.3f %.3f", iFat, iFde, iFsu, iFre, kVol, kPan, kNse, kMx3, kSiz, kMx4, iRev, iWf1, iWf2, iL1t, iL2t, iL1v, iL2v, kTrm, kVbr
         Str strcat Str1, Str2
         puts Str, 1
     endif

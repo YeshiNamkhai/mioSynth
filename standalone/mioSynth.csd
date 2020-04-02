@@ -59,7 +59,7 @@ vslider bounds(424, 98, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relF
 
 ;VCA
 groupbox bounds(461, 8, 132, 186) text("VCA")
-vslider bounds(472, 38, 25, 87)  range(0.001, 1, 0.001, 1, 0.001) text("A") channel("attA") trackercolour(246, 118, 38, 255)
+vslider bounds(472, 38, 25, 87)  range(0.002, 1, 0.002, 1, 0.001) text("A") channel("attA") trackercolour(246, 118, 38, 255)
 vslider bounds(500, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("D") channel("decA") trackercolour(246, 118, 38, 255)
 vslider bounds(528, 38, 25, 87) range(0, 1, 0.7, 1, 0.001) text("S") channel("susA") trackercolour(246, 118, 38, 255)
 vslider bounds(556, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relA") trackercolour(246, 118, 38, 255)
@@ -75,6 +75,7 @@ button bounds(729, 136, 39, 15) text("Show", "Show") colour:1(255, 0, 0, 255) ch
 infobutton bounds(603, 136, 39, 15) text("Help") file("mioSynth.html") channel("help")
 button bounds(687, 136, 39, 15) text("Midi", "Midi") colour:1(255, 0, 0, 255) channel("midi")
 button bounds(645, 136, 39, 15) text("Mono", "Poly") colour:1(255, 0, 0, 255) channel("mono")
+
 
 </Cabbage>
 <CsoundSynthesizer>

@@ -45,7 +45,7 @@ To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can re
 This synth operates setting 33 parameters from the GUI, here you find every parameter explained. Generally speaking when you create a score in cSound at least you will use p1 (instrument), p2 (start time), p3 (duration), p4 (frequency or note), p5 (amplitude).
 |variable name|p-var|function|module|range|
 |-------------|-----|--------|------|-----|
-|iAat|p6|attack|VCA|0.001, 1|
+|iAat|p6|attack|VCA|0.002, 1|
 |iAde|p7|decay|VCA|0, 1|
 |iAsu|p8|sustain|VCA|0, 1|
 |iAre|p9|release|VCA|0, 1|

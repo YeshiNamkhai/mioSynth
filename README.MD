@@ -41,7 +41,7 @@ You may have as many patch as you like, just give the proper ftable number. That
 ### mioSynth_player
 There is more in the player, an **arpeggiator** and a **chords player**! Yes, you can play your synth patches right away and create your own set of chords and scales. By the way if you feel to experiment, say you want to go beyond tonality, just fill the tables with frequencies thus they will be added to *p4*. 
 
-#### So how to use arpeggiator or the chord player?
+#### So how to use the arpeggiator or the chord player?
 Simply follow this schema in your score, say you want to play the I-VI-II-V progression so that would be 1/4 notes for guitar and 1/2 notes for bass. Listen to the [demo](/mioSynth_demo.mp3):
 
 |p1|p2|p3|p4|p5|p6|p7|p8|p9|p10 (add any override)|

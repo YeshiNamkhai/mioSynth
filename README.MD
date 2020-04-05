@@ -58,6 +58,14 @@ Simply follow this schema in your score, say you want to play the I-VI-II-V prog
 |i2|   +|  .|  8.02| .2| .|  . | . | . |.|
 |i2|   +|  .|  8.07| .2| .|  13| . | . |.|
 
+- *p1* i2=arpeggiator, i3=chord player
+- *p4* may be pitch-class (middle C=8.00, C#=8.01, D=8.02..) or frequency
+- *p6* ftable containing synth patch or wave form
+- *p7* ftable of chord/arpeggio
+- *p8* repetition (how many notes in *p3* time), loops if end of *p7* is reached
+- *p9* position of ftable *p7*
+- *p10* and so on for override (check source code for pan)
+
 #### Avaliable chords
 |chord name|notes|range|middle|items|table|
 |----------|-----|-----|------|-----|-----|

@@ -7,7 +7,7 @@
 <style>
 html {width:100%;background-color:lightgray;}
 body {width: 75%;margin: 0 auto; text-align:justified;background-color:white;padding-bottom:50px}
-h1,h2,h3,p,table {margin: 20px 50px;}
+h1,h2,h3,h4,p,table {margin: 20px 50px;}
 img {padding: 5px; max-width:100%; }
 table {
 	color:#333333;
@@ -69,6 +69,280 @@ use the midi button on the panel and customize the <strong>.csd</strong> source 
   <code>e</code><br>
   <code>&lt;/CsScore&gt;</code>
 </blockquote>
+<h3>mioSynth_player</h3>
+<p>There is more in the player, an <strong>arpeggiator</strong> and a <strong>chords player</strong>! Yes, you can play your synth patches right away and create your own set of chords and scales. By the way if you feel to experiment, say you want to go beyond tonality, just fill the tables with frequencies thus they will be added to <em>p4</em>.</p>
+<h4>So how to use the arpeggiator or the chord player?</h4>
+<p>Simply follow this schema in your score, say you want to play the I-VI-II-V progression so that would be 1/4 notes for guitar and 1/2 notes for bass. Listen to the <a href="/YeshiNamkhai/mioSynth/blob/master/mioSynth_demo.mp3">demo</a>:</p>
+<table>
+<thead>
+<tr>
+<th>p1</th>
+<th>p2</th>
+<th>p3</th>
+<th>p4</th>
+<th>p5</th>
+<th>p6</th>
+<th>p7</th>
+<th>p8</th>
+<th>p9</th>
+<th>p10 (add any override)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>intr</td>
+<td>str</td>
+<td>dur</td>
+<td>pitch</td>
+<td>amp</td>
+<td>wav</td>
+<td>arp</td>
+<td>rep</td>
+<td>pos</td>
+<td>pan</td>
+</tr>
+<tr>
+<td>;el. guitar chords</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>i3</td>
+<td>0</td>
+<td>2</td>
+<td>8.00</td>
+<td>.1</td>
+<td>3</td>
+<td>11</td>
+<td>4</td>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>i3</td>
+<td>+</td>
+<td>.</td>
+<td>7.09</td>
+<td>.2</td>
+<td>.</td>
+<td>12</td>
+<td>.</td>
+<td>.</td>
+<td></td>
+</tr>
+<tr>
+<td>i3</td>
+<td>+</td>
+<td>.</td>
+<td>8.02</td>
+<td>.3</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td></td>
+</tr>
+<tr>
+<td>i3</td>
+<td>+</td>
+<td>.</td>
+<td>8.07</td>
+<td>.3</td>
+<td>.</td>
+<td>13</td>
+<td>.</td>
+<td>.</td>
+<td></td>
+</tr>
+<tr>
+<td>;bass arpeggio</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>i2</td>
+<td>0</td>
+<td>2</td>
+<td>8.00</td>
+<td>.2</td>
+<td>2</td>
+<td>11</td>
+<td>2</td>
+<td>2</td>
+<td>.3</td>
+</tr>
+<tr>
+<td>i2</td>
+<td>+</td>
+<td>.</td>
+<td>7.09</td>
+<td>.2</td>
+<td>.</td>
+<td>12</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<td>i2</td>
+<td>+</td>
+<td>.</td>
+<td>8.02</td>
+<td>.2</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr>
+<td>i2</td>
+<td>+</td>
+<td>.</td>
+<td>8.07</td>
+<td>.2</td>
+<td>.</td>
+<td>13</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<h4>Available chords</h4>
+<table>
+<thead>
+<tr>
+<th>chord name</th>
+<th>notes</th>
+<th>range</th>
+<th>middle</th>
+<th>items</th>
+<th>table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maj7</td>
+<td>1 3 5 7</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f11 0 25 -2 -3 -2.04 -2.07 -2.11 -2 -1.04 -1.07 -1.11 -1 -0.04 -0.07 -0.01 0 0.04 0.07 0.11 1 1.04 1.07 1.11 2 2.04 2.07 2.11 3</td>
+</tr>
+<tr>
+<td>min7</td>
+<td>1 3b 5 7b</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f12 0 25 -2 -3 -2.03 -2.07 -2.10 -2 -1.03 -1.07 -1.10 -1 -0.03 -0.07 -0.01 0 0.03 0.07 0.10 1 1.03 1.07 1.10 2 2.03 2.07 2.10 3</td>
+</tr>
+<tr>
+<td>dom7</td>
+<td>1 3 5 7b</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f13 0 25 -2 -3 -2.04 -2.07 -2.10 -2 -1.04 -1.07 -1.10 -1 -0.04 -0.07 -0.01 0 0.04 0.07 0.10 1 1.04 1.07 1.10 2 2.04 2.07 2.10 3</td>
+</tr>
+<tr>
+<td>min75b</td>
+<td>1 3b 5b 7b</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f14 0 25 -2 -3 -2.03 -2.06 -2.10 -2 -1.03 -1.06 -1.10 -1 -0.03 -0.06 -0.01 0 0.03 0.06 0.10 1 1.03 1.06 1.10 2 2.03 2.06 2.10 3</td>
+</tr>
+<tr>
+<td>dim7</td>
+<td>1 3b 5b 7bb</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f15 0 25 -2 -3 -2.03 -2.06 -2.09 -2 -1.03 -1.06 -1.09 -1 -0.03 -0.06 -0.01 0 0.03 0.06 0.09 1 1.03 1.06 1.09 2 2.03 2.06 2.09 3</td>
+</tr>
+<tr>
+<td>maj6</td>
+<td>1 3 5 6</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f16 0 25 -2 -3 -2.04 -2.07 -2.09 -2 -1.04 -1.07 -1.09 -1 -0.04 -0.07 -0.01 0 0.04 0.07 0.09 1 1.04 1.07 1.09 2 2.04 2.07 2.09 3</td>
+</tr>
+<tr>
+<td>min6</td>
+<td>1 3b 5 6</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f17 0 25 -2 -3 -2.03 -2.07 -2.09 -2 -1.03 -1.07 -1.09 -1 -0.03 -0.07 -0.01 0 0.03 0.07 0.09 1 1.03 1.07 1.09 2 2.03 2.07 2.09 3</td>
+</tr>
+<tr>
+<td>maj9</td>
+<td>1 3 5 7 9</td>
+<td>-3,+3</td>
+<td>15</td>
+<td>31</td>
+<td>f18 0 31 -2 -3 -2.02 -2.04 -2.07 -2.11 -2 -1.02 -1.04 -1.07 -1.11 -1 -0.02 -0.04 -0.07 -0.01 0 0.02 0.04 0.07 0.11 1 1.02 1.04 1.07 1.11 2 2.02 2.04 2.07 2.11 3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1 3 5 7b 9</td>
+<td>-3,+3</td>
+<td>15</td>
+<td>31</td>
+<td>f19 0 31 -2 -3 -2.02 -2.04 -2.07 -2.10 -2 -1.02 -1.04 -1.07 -1.10 -1 -0.02 -0.04 -0.07 -0.02 0 0.02 0.04 0.07 0.10 1 1.02 1.04 1.07 1.10 2 2.02 2.04 2.07 2.10 3</td>
+</tr>
+<tr>
+<td>min9</td>
+<td>1 3b 5 7b 9</td>
+<td>-3,+3</td>
+<td>15</td>
+<td>31</td>
+<td>f20 0 31 -2 -3 -2.02 -2.03 -2.07 -2.10 -2 -1.02 -1.03 -1.07 -1.10 -1 -0.02 -0.03 -0.07 -0.02 0 0.02 0.03 0.07 0.10 1 1.02 1.03 1.07 1.10 2 2.02 2.03 2.07 2.10 3</td>
+</tr>
+<tr>
+<td>sus</td>
+<td>1 4 5</td>
+<td>-3,+3</td>
+<td>9</td>
+<td>19</td>
+<td>f21 0 19 -2 -3 -2.05 -2.07 -2 -1.05 -1.07 -1 -0.05 -0.07 0 0.05 0.07 1 1.05 1.07 2 2.05 2.07 3</td>
+</tr>
+<tr>
+<td>7sus</td>
+<td>1 4 5 7b</td>
+<td>-3,+3</td>
+<td>12</td>
+<td>25</td>
+<td>f22 0 25 -2 -3 -2.05 -2.07 -2.10 -2 -1.05 -1.07 -1.10 -1 -0.05 -0.07 -0.02 0 0.05 0.07 0.10 1 1.05 1.07 1.10 2 2.05 2.07 2.10 3</td>
+</tr>
+<tr>
+<td>9sus</td>
+<td>1 4 5 7b 9</td>
+<td>-3,+3</td>
+<td>15</td>
+<td>31</td>
+<td>f23 0 31 -2 -3 -2.02 -2.05 -2.07 -2.10 -2 -1.02 -1.05 -1.07 -1.10 -1 -0.02 -0.05 -0.07 -0.02 0 0.02 0.05 0.07 0.10 1 1.02 1.05 1.07 1.10 2 2.02 2.05 2.07 2.10 3</td>
+</tr>
+</tbody>
+</table>
+
 <h3>Patches</h3>
 <p>To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can rename or delete patches easily.&nbsp;</p>
 <h3>Internals</h3>

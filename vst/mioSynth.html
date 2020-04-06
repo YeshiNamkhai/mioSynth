@@ -7,7 +7,7 @@
 <style>
 html {width:100%;background-color:lightgray;}
 body {width: 75%;margin: 0 auto; text-align:justified;background-color:white;padding-bottom:50px}
-h1,h2,h3,h4,p,table {margin: 20px 50px;}
+h1,h2,h3,h4,p,table, ul {margin: 20px 50px;}
 img {padding: 5px; max-width:100%; }
 table {
 	color:#333333;
@@ -73,7 +73,7 @@ use the midi button on the panel and customize the <strong>.csd</strong> source 
 <h3>mioSynth_player</h3>
 <p>There is more in the player, an <strong>arpeggiator</strong> and a <strong>chords player</strong>! Yes, you can play your synth patches right away and create your own set of chords and scales. By the way if you feel to experiment, say you want to go beyond tonality, just fill the tables with frequencies thus they will be added to <em>p4</em>.</p>
 <h4>So how to use the arpeggiator or the chord player?</h4>
-<p>Simply follow this schema in your score, say you want to play the I-VI-II-V progression so that would be 1/4 notes for guitar and 1/2 notes for bass. Listen to the <a href="http://github.com/YeshiNamkhai/mioSynth/blob/master/mioSynth_demo.mp3">demo</a>:</p>
+<p>Say you want to play the I-VI-II-V progression on the guitar playing strings in different directions, just set repetition as negative and it will read table <em>p7</em> right to left. Listen to the <a href="https://YeshiNamkhai/mioSynth/blob/master/mioSynth_arpeggios.mp3">arpeggio</a>.</p>
 <table>
 <thead>
 <tr>
@@ -91,139 +91,126 @@ use the midi button on the panel and customize the <strong>.csd</strong> source 
 </thead>
 <tbody>
 <tr>
-<td>intr</td>
-<td>str</td>
-<td>dur</td>
-<td>pitch</td>
-<td>amp</td>
-<td>wav</td>
-<td>arp</td>
-<td>rep</td>
-<td>pos</td>
-<td>pan</td>
+<td>;intr</td>
+<td>;str</td>
+<td>;dur</td>
+<td>;pitch</td>
+<td>;amp</td>
+<td>;wav</td>
+<td>;arp</td>
+<td>;rep</td>
+<td>;pos</td>
+<td>;pan</td>
 </tr>
 <tr>
-<td>;el. guitar chords</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>i3</td>
+<td>i2</td>
 <td>0</td>
 <td>2</td>
-<td>8.00</td>
-<td>.1</td>
+<td>6.00</td>
+<td>.5</td>
 <td>3</td>
 <td>11</td>
-<td>4</td>
+<td>-10</td>
+<td>22</td>
+<td>.9</td>
+</tr>
+<tr>
+<td>i2</td>
+<td>+</td>
+<td>.</td>
+<td>5.09</td>
+<td>.</td>
+<td>.</td>
 <td>12</td>
-<td></td>
-</tr>
-<tr>
-<td>i3</td>
-<td>+</td>
-<td>.</td>
-<td>7.09</td>
-<td>.2</td>
-<td>.</td>
+<td>8</td>
 <td>12</td>
 <td>.</td>
-<td>.</td>
-<td></td>
 </tr>
 <tr>
-<td>i3</td>
+<td>i2</td>
 <td>+</td>
 <td>.</td>
-<td>8.02</td>
-<td>.3</td>
+<td>6.02</td>
 <td>.</td>
 <td>.</td>
 <td>.</td>
-<td>.</td>
-<td></td>
+<td>-10</td>
+<td>22</td>
+<td>.85</td>
 </tr>
 <tr>
-<td>i3</td>
+<td>i2</td>
 <td>+</td>
 <td>.</td>
-<td>8.07</td>
-<td>.3</td>
+<td>6.07</td>
+<td>.</td>
 <td>.</td>
 <td>13</td>
+<td>8</td>
+<td>12</td>
 <td>.</td>
-<td>.</td>
-<td></td>
-</tr>
-<tr>
-<td>;bass arpeggio</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>i2</td>
 <td>0</td>
 <td>2</td>
-<td>8.00</td>
-<td>.2</td>
-<td>2</td>
+<td>5.00</td>
+<td>.5</td>
+<td>3</td>
 <td>11</td>
-<td>2</td>
-<td>2</td>
-<td>.3</td>
+<td>5</td>
+<td>12</td>
+<td>.1</td>
 </tr>
 <tr>
 <td>i2</td>
 <td>+</td>
 <td>.</td>
-<td>7.09</td>
-<td>.2</td>
+<td>4.09</td>
+<td>.</td>
 <td>.</td>
 <td>12</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-</tr>
-<tr>
-<td>i2</td>
-<td>+</td>
-<td>.</td>
-<td>8.02</td>
-<td>.2</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
-<td>.</td>
+<td>-4</td>
+<td>22</td>
 <td>.</td>
 </tr>
 <tr>
 <td>i2</td>
 <td>+</td>
 <td>.</td>
-<td>8.07</td>
-<td>.2</td>
+<td>5.02</td>
+<td>.</td>
+<td>.</td>
+<td>.</td>
+<td>5</td>
+<td>12</td>
+<td>.15</td>
+</tr>
+<tr>
+<td>i2</td>
+<td>+</td>
+<td>.</td>
+<td>5.07</td>
+<td>.</td>
 <td>.</td>
 <td>13</td>
-<td>.</td>
-<td>.</td>
+<td>-4</td>
+<td>22</td>
 <td>.</td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><em>p1</em> i2=arpeggiator, i3=chord player</li>
+<li><em>p4</em> may be pitch-class (middle C=8.00, C#=8.01, D=8.02..) or frequency</li>
+<li><em>p6</em> ftable containing synth patch or wave form</li>
+<li><em>p7</em> ftable of chord/arpeggio</li>
+<li><em>p8</em> repetition (how many notes in <em>p3</em> time), loops if end of <em>p7</em> is reached, + goes --&gt;, - goes &lt;--</li>
+<li><em>p9</em> position of ftable <em>p7</em></li>
+<li><em>p10</em> and so on for override (check source code for pan)</li>
+</ul>
+<p>In the source code you find an example with more instruments, listen to the <a href="https://YeshiNamkhai/mioSynth/blob/master/mioSynth_demo.mp3">demo</a>.</p>
+
 <h4>Available chords</h4>
 <table>
 <thead>

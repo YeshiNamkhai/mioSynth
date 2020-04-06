@@ -7,7 +7,7 @@
 */
 <CsoundSynthesizer>
 <CsOptions>
--odac -n -d -m0
+-odac -m0d
 </CsOptions>
 <CsInstruments>
 ; global variables. 
@@ -174,43 +174,49 @@ instr 2 ;arpeggiator
         p8=1
     endif
     ilen = ftlen(p7)   ;table size
-    idur = p3/p8       ;partial duration
+    idur = p3/abs(p8)  ;partial duration
     inxt = 0           ;next duration
-    indx = p9          ;table index
-    until p8==0 do     ;how many notes to play
-        idec tab_i indx, p7
+    ipos = p9          ;table index
+    idx  = 0           ;count 
+    loop:
+        idec tab_i ipos, p7
         if idec<0 && !p4>20 then
-            schedule 1, inxt, idur, p4+(idec-0.88), p5, p6, p10 
-        else
-            schedule 1, inxt, idur, p4+idec, p5, p6, p10 
+            idec-=0.88 ;fix decimals
         endif
+        schedule 1, inxt, idur, p4+idec, p5, p6, p10 
         inxt += idur   ;next start 
-        p8 -= 1        ;dec notes to play
-        if indx+1==ilen then
-            indx = p9  ;reset index
+        if p8>0 then 
+            if ipos+1==ilen then
+                ipos = p9  ;reset index
+            else
+                ipos += 1  ;inc index
+            endif
         else
-            indx += 1  ;inc index
+            if ipos-1==0 then
+                ipos = p9  ;reset index
+            else
+                ipos -= 1  ;inc index
+            endif
         endif
-    od
+    loop_lt idx, 1, abs(p8), loop
 endin
 
 instr 3 ;chords player
     ilen = ftlen(p7)   ;table size
-    indx = p9          ;table index
-    until p8==0 do     ;how many notes to play
-        idec tab_i indx, p7
-        if idec<0 then
-            schedule 1, 0, p3, p4+(idec-0.88), p5, p6 
-        else
-            schedule 1, 0, p3, p4+idec, p5, p6 
+    ipos = p9          ;table index
+    idx = 0            ;count
+    loop:
+        idec tab_i ipos, p7
+        if idec<0 && !p4>20 then
+            idec-=0.88 ;fix decimals
         endif
-        p8 -= 1        ;dec notes to play
-        if indx+1==ilen then
-            indx = p9  ;reset index
+        schedule 1, 0, p3, p4+idec, p5, p6 
+        if ipos+1==ilen then
+            ipos = p9  ;reset index
         else
-            indx += 1  ;inc index
+            ipos += 1  ;inc index
         endif
-    od
+    loop_lt idx, 1, abs(p8), loop
 endin
 
 </CsInstruments>
@@ -258,17 +264,54 @@ f6 0 33 -2 0.001 0.510 0.000 0.224 0.500 0.050 0.300 0.200 -24 -12 -10 10 4912.3
 
 ;p1   p2  p3  p4    p5  p6  p7  p8  p9  10 (override)
 ;intr str dur pitch amp wav arp rep pos pan
+/*
+i2    0   2   6.00  .5  3   11 -10  22 .9 ;el. guitar
+i2    +   .   5.09  .   .   12  8   12 .  ;arpeggios
+i2    +   .   6.02  .   .   .  -10  22 .85
+i2    +   .   6.07  .   .   13  8   12 .
+i2    +   2   6.00  .   3   11 -10  22 .8 
+i2    +   .   5.09  .   .   12  8   12 .  
+i2    +   .   6.02  .   .   .  -10  22 .75
+i2    +   .   6.07  .   .   13  8   12 .
+i2    +   2   6.00  .   3   11 -10  22 .7 
+i2    +   .   5.09  .   .   12  8   12 .  
+i2    +   .   6.02  .   .   .  -10  22 .8
+i2    +   .   6.07  .   .   13  8   12 .
+i2    +   2   6.00  .   3   11 -10  22 .85
+i2    +   .   5.09  .   .   12  8   12 .  
+i2    +   .   6.02  .   .   .  -10  22 .8
+i2    +   .   6.07  .   .   13  8   12 .
+i2    +   2   6.00  .5  3   11 -10  22 .9 
+
+i2    0   2   5.00  .5  3   11  5   12 .1  ;el. guitar
+i2    +   .   4.09  .   .   12  -4  22 .   ;arpeggios
+i2    +   .   5.02  .   .   .   5   12 .15
+i2    +   .   5.07  .   .   13  -4  22 .
+i2    +   2   5.00  .   3   11  5   12 .2 
+i2    +   .   4.09  .   .   12  -4  22 .  
+i2    +   .   5.02  .   .   .   5   12 .25
+i2    +   .   5.07  .   .   13  -4  22 .
+i2    +   2   5.00  .   3   11  5   12 .3 
+i2    +   .   4.09  .   .   12  -4  22 .  
+i2    +   .   5.02  .   .   .   5   12 .25
+i2    +   .   5.07  .   .   13  -4  22 .
+i2    +   2   5.00  .   3   11  5   12 .2 
+i2    +   .   4.09  .   .   12  -4  22 .  
+i2    +   .   5.02  .   .   .   5   12 .15
+i2    +   .   5.07  .   .   13  -4  22 .
+i2    +   2   5.00  .5  3   11  5   12 .1  
+*/
 
 ;intro
 i3    0   2   8.00  .1   3   11  4   12      ;el. guitar 
 i3    +   .   7.09  .2   .   12  .   .       ;chords
 i3    +   .   8.02  .4   .   .   .   . 
-i3    +   .   8.07  .6   .   13  .   . 
+i3    +   .   8.07  .5   .   13  .   . 
 
 i2    0   2   8.00  .04  2   11  2   2  .8        ;bass
 i2    +   .   7.09  .08  .   12  2   .  .6
 i2    +   .   8.02  .1   .   .   4   .  .4
-i2    +   .   8.07  .16  .   13  5   .  .2 
+i2    +   .   8.07  .15  .   13  5   .  .2 
 
 ;theme A
 {2
@@ -293,9 +336,10 @@ i2    +   .   5.09  .   .   12  .   .
 i2    +   .   6.02  .   .   .   .   . 
 i2    +   .   6.07  .   .   13  .   . 
 
+
 ;theme B
 {2
-i3    +   1.2 5.09  .5  3   12  4   12  .2
+i3    +   1.2 5.09  .6  3   12  4   12  .2
 i3    +   .8  5.09  .   .   .   .   .   .
 i3    +   1.2 6.04  .   .   .   .   .   .
 i3    +   .8  6.04  .   .   .   .   .   .
@@ -304,7 +348,7 @@ i3    +   .8  5.09  .   .   .   .   .   .
 i3    +   1.2 6.05  .   .   11  .   .   .
 i3    +   .8  6.05  .   .   .   .   .   .
 
-i2    +   1.2 5.09  .5  3   12  12  12  .8
+i2    +   1.2 5.09  .6  3   12  12  12  .8
 i2    +   .8  5.09  .   .   .   6   .   .
 i2    +   1.2 6.04  .   .   .   12  .   .
 i2    +   .8  6.04  .   .   .   6   .   .
@@ -315,7 +359,7 @@ i2    +   .8  6.05  .   .   .   6   .   .
 }
 
 ;theme C
-i3    +   1.2 6.07  .5  3   20  4   12  .2
+i3    +   1.2 6.07  .6  3   20  4   12  .2
 i3    +   .8  6.07  .   .   .   .   .   .
 i3    +   1.2 6.04  .   .   .   .   .   .
 i3    +   .8  6.04  .   .   .   .   .   .
@@ -324,7 +368,7 @@ i3    +   .8  6.09  .   .   .   .   .   .
 i3    +   1.2 6.04  .   .   21  .   .   .
 i3    +   .8  6.04  .   .   .   .   .   .
 
-i2    +   1.2 6.07  .5  1   20  12  12  .8
+i2    +   1.2 6.07  .6  1   20  12  12  .8
 i2    +   .8  6.07  .   .   .   6   .   .
 i2    +   1.2 6.04  .   .   .   10  .   .
 i2    +   .8  6.04  .   .   .   4   .   .
@@ -334,27 +378,28 @@ i2    +   1.2 6.04  .   .   21  4   .   .
 i2    +   .8  6.04  .   .   .   1   .   .
 
 ;end
-i3    +   2   8.02  .5   3   12  4   12  .1
+i3    +   2   8.02  .6   3   12  4   12  .1
 i3    +   .   8.07  .    .   13  .   .   .3
 i3    +   .   8.00  .    .   11  .   .   .5 ;el. guitar 
 i3    +   .   7.09  .    .   12  .   .   .6 ;chords
 
-i2    +   2   6.02  .5  3   12   12  12  .9
+i2    +   2   6.02  .6  3   12   12  12  .9
 i2    +   .   6.07  .   .   13   8   .   .7
 i2    +   .   6.00  .   .   11   6   .   .5 ;el. guitar
 i2    +   .   5.09  .   .   12   4   .   .4 ;arpeggios
 
-
-i1 9 2  4.00  .4  6  .6  ;snare drum
+;rythm
+i1 9  2  4.00  .45 6  .6  ;snare drum
 {7 CNT
-i1 + 2  .     .   .  .
+i1 +  2  .     .   .  .
 }
 
-i1 8 2  4.00  .6  5  .4  ;gate kick    
+i1 8  2  4.00  .6  5  .4  ;gate kick    
 {21 CNT 
-i1 + 2  .     .   .  .
+i1 +  2  .     .   .  .
 }
 
-e
+
+e 
 </CsScore>
 </CsoundSynthesizer>

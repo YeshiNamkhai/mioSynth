@@ -42,29 +42,27 @@ You may have as many patch as you like, just give the proper ftable number. That
 There is more in the player, an **arpeggiator** and a **chords player**! Yes, you can play your synth patches right away and create your own set of chords and scales. By the way if you feel to experiment, say you want to go beyond tonality, just fill the tables with frequencies thus they will be added to *p4*. 
 
 #### So how to use the arpeggiator or the chord player?
-Simply follow this schema in your score, say you want to play the I-VI-II-V progression so that would be 1/4 notes for guitar and 1/2 notes for bass. Listen to the [demo](/mioSynth_demo.mp3):
-
+Say you want to play the I-VI-II-V progression on the guitar playing strings in different directions, just set repetition as negative and it will read table *p7* left to right. Listen to the [arpeggio](/mioSynth_arpeggios.mp3).
 |p1|p2|p3|p4|p5|p6|p7|p8|p9|p10 (add any override)|
 |--|--|--|--|--|--|--|--|--|----------------------|
 |intr|str|dur|pitch|amp|wav|arp|rep|pos|pan|
-|;el. guitar chords|
-|i3|   0|  2|  8.00| .1|  3|  11| 4| 12| | 
-|i3|   +|  .|  7.09| .2|  .|  12| .|  .| | 
-|i3|   +|  .|  8.02| .3|  .|  . | .|  .| |
-|i3|   +|  .|  8.07| .3|  .|  13| .|  .| |
-|;bass arpeggio|
-|i2|   0|  2|  8.00| .2| 2|  11| 2 | 2 |.3|
-|i2|   +|  .|  7.09| .2| .|  12| . | . |.|
-|i2|   +|  .|  8.02| .2| .|  . | . | . |.|
-|i2|   +|  .|  8.07| .2| .|  13| . | . |.|
-
+|i2|    0|   2 |  6.00|  .5 | 3 |  11 |-10 | 22 |.9 
+|i2|    +|   . |  5.09|  . |  . |  12 | 8  | 12 |.  
+|i2|    +|   . |  6.02|  . |  . |  .  |-10 | 22 |.85
+|i2|   + |  .  | 6.07 | .  | .  | 13  |8   |12  |.
+|i2|    0|   2|   5.00|  .5|  3 |  11 | 5  | 12 |.1  
+|i2|    +|   .|   4.09| .  | .  | 12  |-4  |22  |.   
+|i2|    +|   .|   5.02| .  | .  | .   |5   |12  |.15
+|i2|    +|   .|   5.07|  .|   . |  13 | -4 | 22 |.
 - *p1* i2=arpeggiator, i3=chord player
 - *p4* may be pitch-class (middle C=8.00, C#=8.01, D=8.02..) or frequency
 - *p6* ftable containing synth patch or wave form
 - *p7* ftable of chord/arpeggio
-- *p8* repetition (how many notes in *p3* time), loops if end of *p7* is reached
+- *p8* repetition (how many notes in *p3* time), loops if end of *p7* is reached, + goes -->, - goes <--
 - *p9* position of ftable *p7*
 - *p10* and so on for override (check source code for pan)
+
+In the source code you find an example with more instruments, listen to the [demo](/mioSynth_demo.mp3).
 
 #### Avaliable chords
 |chord name|notes|range|middle|items|table|
@@ -82,7 +80,6 @@ Simply follow this schema in your score, say you want to play the I-VI-II-V prog
 |sus|1 4 5|-3,+3|9|19|f21 0 19 -2 -3 -2.05 -2.07 -2 -1.05 -1.07 -1 -0.05 -0.07 0 0.05 0.07 1 1.05 1.07 2 2.05 2.07 3|
 |7sus|1 4 5 7b|-3,+3|12|25|f22 0 25 -2 -3 -2.05 -2.07 -2.10 -2 -1.05 -1.07 -1.10 -1 -0.05 -0.07 -0.02 0 0.05 0.07 0.10 1 1.05 1.07 1.10 2 2.05 2.07 2.10 3|
 |9sus|1 4 5 7b 9|-3,+3|15|31|f23 0 31 -2 -3 -2.02 -2.05 -2.07 -2.10 -2 -1.02 -1.05 -1.07 -1.10 -1 -0.02 -0.05 -0.07 -0.02 0 0.02 0.05 0.07 0.10 1 1.02 1.05 1.07 1.10 2 2.02 2.05 2.07 2.10 3|
-
 
 ### Patches
 To manage your patches edit the file <strong>mioSynth.snaps</strong>, you can rename or delete patches easily.

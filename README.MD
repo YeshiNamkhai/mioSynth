@@ -42,10 +42,10 @@ You may have as many patch as you like, just give the proper ftable number. That
 There is more in the player, an **arpeggiator** and a **chords player**! Yes, you can play your synth patches right away and create your own set of chords and scales. By the way if you feel to experiment, say you want to go beyond tonality, just fill the tables with frequencies thus they will be added to *p4*. 
 
 #### So how to use the arpeggiator or the chord player?
-Say you want to play the I-VI-II-V progression on the guitar playing strings in different directions, just set repetition as negative and it will read table *p7* left to right. Listen to the [arpeggio](/mioSynth_arpeggios.mp3).
+Say you want to play the I-VI-II-V progression on the guitar playing strings in different directions, just set repetition as negative and it will read table *p7*  right to left. Listen to the [arpeggio](/mioSynth_arpeggios.mp3).
 |p1|p2|p3|p4|p5|p6|p7|p8|p9|p10 (add any override)|
 |--|--|--|--|--|--|--|--|--|----------------------|
-|intr|str|dur|pitch|amp|wav|arp|rep|pos|pan|
+|;intr|;str|;dur|;pitch|;amp|;wav|;arp|;rep|;pos|;pan|
 |i2|    0|   2 |  6.00|  .5 | 3 |  11 |-10 | 22 |.9 
 |i2|    +|   . |  5.09|  . |  . |  12 | 8  | 12 |.  
 |i2|    +|   . |  6.02|  . |  . |  .  |-10 | 22 |.85

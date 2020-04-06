@@ -182,7 +182,7 @@ instr 1
     
     if iDis==1 then
         ;use this for table
-        Str1 sprintf "f01 0 33 -2 %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
+        Str1 sprintf "f1 0 33 -2 %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
         ;use this for notes
         ;aStr1 sprintf "i1 + . %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %.3f %i %i %i %i %.3f %.3f", p4, p5, iAat, iAde, iAsu, iAre, kPw1, kPw2, kMx1, kMx2, kOc1, kOc2, kFn1, kFn2, kCut, kRes
         Str2 sprintf " %.3f %.3f %.3f %.3f %.3f %.3f %i %.3f %.3f %.3f %i %i %i %i %i %i %i %.3f %.3f", iFat, iFde, iFsu, iFre, kVol, kPan, kNse, kMx3, kSiz, kMx4, iRev, iWf1, iWf2, iL1t, iL2t, iL1v, iL2v, kTrm, kVbr

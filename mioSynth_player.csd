@@ -124,7 +124,9 @@ endif
     
     kAen madsr iAat, iAde, iAsu, iAre, 0, p3 ;ADSR-->VCA
     kFen madsr iFat, iFde, iFsu, iFre, 0, p3 ;ADSR-->VCF
-    kLft lfo p5, kTrm
+    
+   
+    kLft lfo p5, kTrm   
     kLfv lfo p5, kVbr
 
     if iL1t==1 && iL1v==1 then
@@ -136,6 +138,7 @@ endif
     else
         aVco1 vco2 p5, iNote+iNote*semitone(kOc1)+iNote*semitone(kFn1)/100, iWf1, kPw1
     endif
+
     if iL2t==1 && iL2v==1 then
         aVco2 vco2 p5*kLft, (iNote+kLfv)+(iNote+kLfv)*semitone(kOc2)+(iNote+kLfv)*semitone(kFn2)/100, iWf2, kPw2  
     elseif iL2t==1 && iL2v==0 then
@@ -145,13 +148,13 @@ endif
     else
         aVco2 vco2 p5, iNote+iNote*semitone(kOc2)+iNote*semitone(kFn2)/100, iWf2, kPw2  
     endif
-
-    aOscs =aVco1*kMx1+aVco2*kMx2
-   
-    if kNse==1 && kMx3>0 then      ;white noise
+    
+    aOscs = aVco1*kMx1+aVco2*kMx2
+    
+    if kNse==1 then      ;white noise
         aRand rand p5
         aOscs +=aRand*kMx3    
-    elseif kNse==2  && kMx3>0 then ;pink noise
+    elseif kNse==2  then ;pink noise
         aPink pinker
         aOscs +=aPink*kMx3
     endif
@@ -260,7 +263,8 @@ f4 0 33 -2 0.002 0.735 0.000 0.327 0.500 0.500 1.000 0.500 -36 -19 -7 7 339.041 
 f5 0 33 -2 0.002 0.429 0.694 0.531 0.250 0.500 1.000 0.500 -12 -24 -1 1 101.959 0.628 0.001 0.265 0.000 0.633 1.000 0.500 2 0.800 0.000 0.388 1 2 3 1 0 0 0 2.000 2.000
 ;snare
 f6 0 33 -2 0.001 0.510 0.000 0.224 0.500 0.050 0.300 0.200 -24 -12 -10 10 4912.387 0.260 0.021 0.469 0.000 0.755 0.700 0.500 1 0.800 0.000 0.200 1 3 2 0 1 1 0 8.240 8.400
-
+;hi-hat
+f7 0 33 -2 0.001 0.122 0.000 0.061 0.500 0.500 0.000 0.000 0 0 0 0 10928.335 0.744 0.001 0.551 0.000 0.429 0.700 0.500 1 1.000 0.000 0.500 1 2 1 0 0 0 0 2.000 2.000
 
 ;p1   p2  p3  p4    p5  p6  p7  p8  p9  10 (override)
 ;intr str dur pitch amp wav arp rep pos pan
@@ -389,16 +393,39 @@ i2    +   .   6.00  .   .   11   6   .   .5 ;el. guitar
 i2    +   .   5.09  .   .   12   4   .   .4 ;arpeggios
 
 ;rythm
-i1 9  2  4.00  .45 6  .6  ;snare drum
-{7 CNT
-i1 +  2  .     .   .  .
+i1 9  2  4.00  .45   6  .7  ;snare drum
+{7
+i1 +  2  .     .     .  .
 }
 
-i1 8  2  4.00  .6  5  .4  ;gate kick    
-{21 CNT 
-i1 +  2  .     .   .  .
+i1 8  2  4.00  .6    5  .3  ;gate kick    
+{21 
+i1 +  2  .     .     .  .
 }
 
+i1 7.75 .25 6.00 .04  7  .8    ;hi-hat    
+{16  
+i1 +  .25  .   .16 .  .
+i1 +  .25  .   .08 .  .
+i1 +  .25  .   .   .  .
+i1 +  .25  .   .   .  .
+}
+{6  
+i1 +  1    .   .16 .  .8
+i1 +  .25  .   .08 .  .
+i1 +  .25  .   .16 .  .
+i1 +  2.5  .   .08 .  .2
+}
+{6  
+i1 +  .25  .   .08 .  .8
+i1 +  .25  .   .06 .  .
+i1 +  .25  .   .   .  .
+i1 +  .25  .   .04 .  .2
+}
+i1 +  .25  .   .   .  .8
+i1 +  .25  .   .   .  .
+i1 +  .25  .   .   .  .
+i1 +  .25  .   .   .  .2
 
 e 
 </CsScore>

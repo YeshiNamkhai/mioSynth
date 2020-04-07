@@ -240,10 +240,10 @@ instr 1
     aOscs =aVco1*kMx1+aVco2*kMx2
 
    
-    if kNse==1 && kMx3>0 then     ; white noise
+    if kNse==1 then     ; white noise
         aRand rand p5
         aOscs +=aRand*kMx3    
-    elseif kNse==2  && kMx3>0 then ;pink noise
+    elseif kNse==2 then ;pink noise
         aPink pinker
         aOscs +=aPink*kMx3
     endif

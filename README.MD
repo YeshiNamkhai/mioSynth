@@ -1,11 +1,5 @@
 # mioSynth
-Welcome to **mioSynth** a simple way to build an orchestra for [cSound](https://csound.com/) and play your favorite melody. Run it in [Cabbage](https://cabbageaudio.com/), standalone, or as VST plugin within your own DAW. Listen to the 
-
-  <audio preload="auto" autoplay="autoplay">
-    <source src="/mioSynth_demo.mp3" type="audio/mp3" />
-  </audio>
-
-[demo](/mioSynth_demo.mp3).
+Welcome to **mioSynth** a simple way to build an orchestra for [cSound](https://csound.com/) and play your favorite melody. Run it in [Cabbage](https://cabbageaudio.com/), standalone, or as VST plugin within your own DAW. Listen to the [demo](/mioSynth_demo.mp3).
 
 ## Programming '70 synths
 It took me a great deal of time to learn about analog synth programming, if you are like me and you know little on how to make your own patches check out videos from [New York School of Synthesis](https://www.youtube.com/playlist?list=PLpOuKedj0gNkbG7EjC-5Klv2MzqbV3H6l) and the accompanying [book](https://archive.org/stream/SynthesizerBasicsDeanFriedman600dpi_201608/Synthesizer%20Basics%20Dean%20Friedman%28600dpi%29#page/n0/mode/2up), also the video [Secrets of Analog an Digital Synthesis](https://www.youtube.com/watch?v=tivES-sjHc4) and the accompanying [book](https://archive.org/download/TheSecretsOfAnalogDigitalSynthesisBySteveDeFuria600dpi/The%20Secrets%20of%20Analog%20%26%20Digital%20Synthesis%20by%20Steve%20De%20Furia%28600dpi%29.pdf), and finally [Roland's synthesizer books](http://www.smg.org/stuff/The_Synthesizer.zip). (Here i won't be quoting the main literature on the subject but i highly recommend it if you wish to take the next level)

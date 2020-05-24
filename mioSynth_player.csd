@@ -122,8 +122,8 @@ endif
         iNote = cpspch(p4) ; convert from pitch classes 
     endif
     
-    kAen madsr iAat, iAde, iAsu, iAre, 0, p3 ;ADSR-->VCA
-    kFen madsr iFat, iFde, iFsu, iFre, 0, p3 ;ADSR-->VCF
+    kAen adsr iAat, iAde, iAsu, iAre, 0 ;ADSR-->VCA
+    kFen adsr iFat, iFde, iFsu, iFre, 0 ;ADSR-->VCF
     
    
     kLft lfo p5, kTrm   
@@ -283,6 +283,10 @@ f63 0 33 -2 0.002 0.714 0.490 0.714 0.500 0.500 0.500 0.500 19 0 -3 3 14112.001 
 f64 0 33 -2 0.043 0.510 0.163 0.857 0.500 0.500 0.500 0.500 12 -12 -2 2 6718.723 0.952 0.021 0.755 0.429 0.163 0.700 0.500 2 0.730 0.000 0.500 0 3 1 0 1 0 0 6.840 2.000
 ;synth lead
 f65 0 33 -2 0.043 0.286 0.612 0.796 0.500 0.500 0.700 0.300 0 0 -1 2 9373.545 0.796 0.021 0.265 0.531 0.939 0.700 0.500 1 0.000 0.000 0.500 1 1 1 0 0 1 0 4.730 2.550
+;mallet
+f66 0 33 -2 0.002 0.898 0.286 0.898 0.500 0.500 0.500 0.500 0 0 -5 5 3184.020 0.888 0.001 0.612 0.184 0.612 0.700 0.500 1 0.000 0.000 0.692 1 3 3 0 1 1 0 2.000 6.600
+
+
 
 ;p1   p2  p3  p4    p5  p6  p7  p8  p9  10 (override)
 ;intr str dur pitch amp wav arp rep pos pan

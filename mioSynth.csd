@@ -70,13 +70,13 @@ rslider bounds(472, 130, 54, 54) range(0, 1, 0.5, 1, 0.001) text("Pan") channel(
 groupbox bounds(594, 8, 185, 186) text("Patch")
 combobox bounds(603, 158, 102, 25), , populate("*.snaps") channel("patch")
 filebutton bounds(712, 158, 56, 25), channel("save"), text("Save", "Save"), mode("snapshot")
-signaldisplay bounds(604, 34, 165, 97)   colour(0, 128, 0, 255), colour(0, 128, 0, 255), channel("signaldisplay72") colour:0(0, 128, 0, 255) 
+
 button bounds(729, 136, 39, 15) text("Show", "Show") colour:1(255, 0, 0, 255) channel("show")
 infobutton bounds(603, 136, 39, 15) text("Help") file("mioSynth.html") channel("help")
 button bounds(687, 136, 39, 15) text("Midi", "Midi") colour:1(255, 0, 0, 255) channel("midi")
 button bounds(645, 136, 39, 15) text("Mono", "Poly") colour:1(255, 0, 0, 255) channel("mono")
 
-
+signaldisplay bounds(604, 32, 165, 100) colour("green") displayType("waveform") channel("signaldisplay72"), signalVariable("aLp")
 </Cabbage>
 <CsoundSynthesizer>
 <CsOptions>
@@ -260,7 +260,7 @@ instr 1
         outs aLp*kAen*kVol*(1-kPan), aLp*kAen*kVol*kPan
     endif
     
-    display aLp*kAen, 0.25, 1
+    display aLp, 0.25, 1
 endin
 
 </CsInstruments>

@@ -6,7 +6,7 @@
  web: https://my-hexagon.com
 */
 <Cabbage>
-form caption("mioSynth") size(785, 300), colour("black"), pluginid("def1") ;style("legacy")
+form caption("mioSynth") size(785, 300), colour("black"), pluginId("def1") ;style("legacy")
 keyboard bounds(0, 199, 790, 100) 
 
 ;VCO
@@ -14,37 +14,37 @@ groupbox bounds(4, 8, 160, 118) text("VCO 1")
 groupbox bounds(166, 8, 160, 118) text("VCO 2")
 combobox bounds(176, 38, 72, 30) text("saw", "pulse", "triangle") channel("wav2")
 combobox bounds(14, 38, 72, 30) text("saw", "pulse", "triangle") channel("wav1") 
-rslider bounds(89, 38, 30, 30) range(0.05, 0.95, 0.5, 1, 0.05) channel("pwm1")  trackercolour(0, 118, 255, 255) identchannel("pwm1i") active(0) alpha(0.3) popuptext("duty/rate")
-rslider bounds(251, 38, 30, 30) range(0.05, 0.95, 0.5, 1, 0.05) channel("pwm2")  trackercolour(0, 118, 255, 255) identchannel("pwm2i") active(0) alpha(0.3) popuptext("duty/rate")
+rslider bounds(89, 38, 30, 30) range(0.05, 0.95, 0.5, 1, 0.05) channel("pwm1")  trackerColour(0, 118, 255, 255) identChannel("pwm1i") active(0) alpha(0.3) popupText("duty/rate")
+rslider bounds(251, 38, 30, 30) range(0.05, 0.95, 0.5, 1, 0.05) channel("pwm2")  trackerColour(0, 118, 255, 255) identChannel("pwm2i") active(0) alpha(0.3) popupText("duty/rate")
 label bounds(125, 33, 28, 11) text("LFO")
 label bounds(287, 33, 28, 11) text("LFO")
-button bounds(125, 47, 28, 10) channel("lfo1t") text("off", "on") colour:1(255, 0, 0, 255) identchannel("lfo1i")  
-button bounds(287, 47, 28, 10) channel("lfo2t") text("off", "on") colour:1(255, 0, 0, 255) identchannel("lfo2i")  
-button bounds(125, 58, 28, 10) channel("lfo1v") text("off", "on") colour:1(255, 0, 0, 255) identchannel("lfo1i")  
-button bounds(287, 58, 28, 10) channel("lfo2v") text("off", "on") colour:1(255, 0, 0, 255) identchannel("lfo2i")  
-rslider bounds(110, 74, 45, 45) range(0, 1, 0.5, 1, 0.1) channel("mix1")  trackercolour(246, 118, 38, 255) text("Mix")
-rslider bounds(272, 74, 45, 45) range(0, 1, 0.5, 1, 0.1) channel("mix2")  trackercolour(246, 118, 38, 255) text("Mix")
-rslider bounds(14, 74, 45, 45) range(-36, 36, 0, 1, 1) channel("oct1")  trackercolour(0, 118, 255, 255) text("Oct") 
-rslider bounds(62, 74, 45, 45) range(-25, 25, 0, 1, 1)   trackercolour(0, 118, 255, 255) channel("fin1") text("Fine") 
-rslider bounds(176, 74, 45, 45) range(-36, 36, 0, 1, 1) channel("oct2")  trackercolour(0, 118, 255, 255) text("Oct") 
-rslider bounds(224, 74, 45, 45) range(-25, 25, 0, 1, 1) channel("fin2")  trackercolour(0, 118, 255, 255) text("Fine") 
+button bounds(125, 47, 28, 10) channel("lfo1t") text("off", "on") colour:1(255, 0, 0, 255) identChannel("lfo1i")  
+button bounds(287, 47, 28, 10) channel("lfo2t") text("off", "on") colour:1(255, 0, 0, 255) identChannel("lfo2i")  
+button bounds(125, 58, 28, 10) channel("lfo1v") text("off", "on") colour:1(255, 0, 0, 255) identChannel("lfo1i")  
+button bounds(287, 58, 28, 10) channel("lfo2v") text("off", "on") colour:1(255, 0, 0, 255) identChannel("lfo2i")  
+rslider bounds(110, 74, 45, 45) range(0, 1, 0.5, 1, 0.1) channel("mix1")  trackerColour(246, 118, 38, 255) text("Mix")
+rslider bounds(272, 74, 45, 45) range(0, 1, 0.5, 1, 0.1) channel("mix2")  trackerColour(246, 118, 38, 255) text("Mix")
+rslider bounds(14, 74, 45, 45) range(-36, 36, 0, 1, 1) channel("oct1")  trackerColour(0, 118, 255, 255) text("Oct") 
+rslider bounds(62, 74, 45, 45) range(-25, 25, 0, 1, 1)   trackerColour(0, 118, 255, 255) channel("fin1") text("Fine") 
+rslider bounds(176, 74, 45, 45) range(-36, 36, 0, 1, 1) channel("oct2")  trackerColour(0, 118, 255, 255) text("Oct") 
+rslider bounds(224, 74, 45, 45) range(-25, 25, 0, 1, 1) channel("fin2")  trackerColour(0, 118, 255, 255) text("Fine")
 
 ;Noise
 groupbox bounds(4, 127, 123, 67) text("Noise")
 combobox bounds(14, 152, 71, 30) text("white", "pink") channel("noise") 
-rslider bounds(86, 152, 30, 30) range(0, 1, 0, 1, 0.01) channel("mix3")     trackercolour(246, 118, 38, 255)
+rslider bounds(86, 152, 30, 30) range(0, 1, 0, 1, 0.01) channel("mix3")     trackerColour(246, 118, 38, 255)
 label bounds(85, 182, 31, 10) text("Mix")
 
 ;LFO
 groupbox bounds(128, 127, 82, 67) text("LFO")
-rslider bounds(136, 152, 30, 30) range(0.5, 20, 2, 1, 0.01) channel("trem") trackercolour(55, 55, 118, 255)  popuptext("tremolo rate")
-rslider bounds(168, 152, 30, 30) range(0.5, 20, 2, 1, 0.01) channel("vibr") trackercolour(55, 55, 118, 255)  popuptext("vibrato rate")
+rslider bounds(136, 152, 30, 30) range(0.5, 20, 2, 1, 0.01) channel("trem") trackerColour(55, 55, 118, 255)  popupText("tremolo rate")
+rslider bounds(168, 152, 30, 30) range(0.5, 20, 2, 1, 0.01) channel("vibr") trackerColour(55, 55, 118, 255)  popupText("vibrato rate")
 label bounds(128, 182, 81, 10) text("Tremolo Vibrato")
 
 ;Reverb
-groupbox bounds(211, 127, 116, 69) text("Reverb")
-rslider bounds(252, 152, 30, 30) range(0, 1, 0.5, 1, 0.001) channel("room") trackercolour(0, 118, 255, 255) 
-rslider bounds(286, 152, 30, 30) range(0, 1, 0.5, 1, 0.001) channel("mix4") trackercolour(246, 118, 38, 255) popuptext("dry/wet")
+groupbox bounds(211, 127, 115, 67) text("Reverb")
+rslider bounds(252, 152, 30, 30) range(0, 1, 0.5, 1, 0.001) channel("room") trackerColour(0, 118, 255, 255) 
+rslider bounds(286, 152, 30, 30) range(0, 1, 0.5, 1, 0.001) channel("mix4") trackerColour(246, 118, 38, 255) popupText("dry/wet")
 button bounds(220, 158, 26, 18) channel("rev") text("off", "on") colour:1(255, 0, 0, 255)
 label bounds(247, 182, 73, 10) text("Room    Mix")
 
@@ -58,19 +58,19 @@ vslider bounds(396, 98, 25, 87) range(0, 1, 0.7, 1, 0.001) text("S") channel("su
 vslider bounds(424, 98, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relF")
 
 ;VCA
-groupbox bounds(461, 8, 132, 186) text("VCA")
-vslider bounds(472, 38, 25, 87)  range(0.002, 1, 0.002, 1, 0.001) text("A") channel("attA") trackercolour(246, 118, 38, 255)
-vslider bounds(500, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("D") channel("decA") trackercolour(246, 118, 38, 255)
-vslider bounds(528, 38, 25, 87) range(0, 1, 0.7, 1, 0.001) text("S") channel("susA") trackercolour(246, 118, 38, 255)
-vslider bounds(556, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relA") trackercolour(246, 118, 38, 255)
-rslider bounds(528, 130, 54, 54) range(0, 1, 0.7, 1, 0.001) text("Master") channel("vol") trackercolour(246, 118, 38, 255)
-rslider bounds(472, 130, 54, 54) range(0, 1, 0.5, 1, 0.001) text("Pan") channel("pan")  trackercolour(0, 0, 0, 255)
+groupbox bounds(460, 8, 132, 186) text("VCA")
+vslider bounds(472, 38, 25, 87)  range(0.002, 1, 0.002, 1, 0.001) text("A") channel("attA") trackerColour(246, 118, 38, 255)
+vslider bounds(500, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("D") channel("decA") trackerColour(246, 118, 38, 255)
+vslider bounds(528, 38, 25, 87) range(0, 1, 0.7, 1, 0.001) text("S") channel("susA") trackerColour(246, 118, 38, 255)
+vslider bounds(556, 38, 25, 87) range(0, 1, 0, 1, 0.001) text("R") channel("relA") trackerColour(246, 118, 38, 255)
+rslider bounds(528, 130, 54, 54) range(0, 1, 0.7, 1, 0.001) text("Master") channel("vol") trackerColour(246, 118, 38, 255)
+rslider bounds(472, 130, 54, 54) range(0, 1, 0.5, 1, 0.001) text("Pan") channel("pan")  trackerColour(0, 0, 0, 255)
 
 ;Patch
 groupbox bounds(594, 8, 185, 186) text("Patch")
 combobox bounds(603, 158, 102, 25), , populate("*.snaps") channel("patch")
 filebutton bounds(712, 158, 56, 25), channel("save"), text("Save", "Save"), mode("snapshot")
-signaldisplay bounds(604, 34, 165, 97)   colour(0, 128, 0, 255) colour:0(0, 128, 0, 255) displaytype("waveform")
+signaldisplay bounds(604, 34, 165, 97)   colour(0, 128, 0, 255), colour(0, 128, 0, 255), channel("signaldisplay72") colour:0(0, 128, 0, 255) 
 button bounds(729, 136, 39, 15) text("Show", "Show") colour:1(255, 0, 0, 255) channel("show")
 infobutton bounds(603, 136, 39, 15) text("Help") file("mioSynth.html") channel("help")
 button bounds(687, 136, 39, 15) text("Midi", "Midi") colour:1(255, 0, 0, 255) channel("midi")

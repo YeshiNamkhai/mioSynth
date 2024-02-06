@@ -161,6 +161,10 @@ endif
         
     aLp moogladder aOscs, kCut*kFen, kRes*kFen ;VCF
 
+    aLp balance aLp, aOscs
+    
+    aLp clip aLp,0,0.999
+
     if iRev==1 then
         aL, aR  freeverb aLp, aLp, kSiz, 0, sr, 0
         amixL   ntrpol aLp, aL, kMx4	;Dry/Wet L
